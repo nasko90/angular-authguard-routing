@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { SecurityService } from 'src/app/security/security.service';
+import { UserAuth } from 'src/app/models/user-auth';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tennis';
+  securityObject: UserAuth;
+
+  constructor(private securityService: SecurityService){
+    this.securityObject = this.securityService.securityObject;
+  }
+
+  logout(){
+    
+  }
 }
